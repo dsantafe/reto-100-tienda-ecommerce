@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: reto-100-tienda-ecommerce-argo-application
+  namespace: argo-cd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/dsantafe/bootcamp-devops-2023"
+    path: deploy/dev
+    targetRevision: HEAD
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: reto-100-tienda-ecommerce-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

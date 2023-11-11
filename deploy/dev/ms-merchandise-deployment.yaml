@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-merchandise
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-merchandise
+  template:
+    metadata:
+      labels:
+        app: ms-merchandise
+    spec:
+      containers:
+      - name: ms-merchandise
+        image: ms-merchandise:1.0
+        ports:
+        - containerPort: 3003
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-merchandise
+spec:
+  selector:
+    app: ms-merchandise
+  ports:
+  - protocol: TCP
+    port: 3003
+    targetPort: 3003
+  type: ClusterIP

@@ -1,0 +1,20 @@
+{
+    "name": "microservice-shopping-cart",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "build": "babel server.js --out-dir dist"
+    },
+    "author": "roxs",
+    "license": "ISC",
+    "dependencies": {
+        "express": "4.17.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.3",
+        "@babel/preset-env": "^7.23.3"
+    }
+}

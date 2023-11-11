@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-frontend
+  template:
+    metadata:
+      labels:
+        app: ms-frontend
+    spec:
+      containers:
+      - name: ms-frontend
+        image: ms-frontend:1.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: PRODUCTS_SERVICE
+          value: "ms-products"
+        - name: SHOPPING_CART_SERVICE
+          value: "ms-shopping-cart"
+        - name: MERCHANDISE_SERVICE
+          value: "ms-merchandise"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-frontend
+spec:
+  selector:
+    app: ms-frontend
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: LoadBalancer

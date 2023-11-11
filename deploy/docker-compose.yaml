@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  ms-frontend:
+    image: ms-frontend:1.0
+    ports:
+      - "3000:3000"
+    environment:
+      - PRODUCTS_SERVICE=ms-products
+      - SHOPPING_CART_SERVICE=ms-shopping-cart
+      - MERCHANDISE_SERVICE=ms-merchandise
+    depends_on:
+      - ms-products
+      - ms-shopping-cart
+      - ms-merchandise
+
+  ms-products:
+    image: ms-products:1.0
+    ports:
+      - "3001:3001"
+
+  ms-shopping-cart:
+    image: ms-shopping-cart:1.0
+    ports:
+      - "3002:3002"
+
+  ms-merchandise:
+    image: ms-merchandise:1.0
+    ports:
+      - "3003:3003"
