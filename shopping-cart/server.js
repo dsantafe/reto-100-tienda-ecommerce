@@ -20,4 +20,3 @@ app.get('/', function (req, res) {
 app.listen(3002, function () {
   console.log("app listening on port 3002!");
 });
-
