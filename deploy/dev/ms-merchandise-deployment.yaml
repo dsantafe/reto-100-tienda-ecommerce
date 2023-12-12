@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ms-merchandise
-        image: dsantafe/ms-merchandise:1.0
+        image: dsantafe/ms-merchandise
         ports:
         - containerPort: 3003
 ---
