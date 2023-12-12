@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/dsantafe/bootcamp-devops-2023"
+    repoURL: "https://github.com/dsantafe/reto-100-tienda-ecommerce"
     path: deploy/dev
     targetRevision: HEAD
   destination:

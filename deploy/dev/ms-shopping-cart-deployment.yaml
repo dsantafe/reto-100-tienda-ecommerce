@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ms-shopping-cart
-        image: ms-shopping-cart:1.0
+        image: dsantafe/ms-shopping-cart:1.0
         ports:
         - containerPort: 3002
 ---

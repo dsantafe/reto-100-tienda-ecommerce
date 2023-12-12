@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ms-products
-        image: ms-products:1.0
+        image: dsantafe/ms-products:1.0
         ports:
         - containerPort: 3001
 ---

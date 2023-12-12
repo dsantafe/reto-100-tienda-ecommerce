@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ms-frontend
-        image: ms-frontend:1.0
+        image: dsantafe/ms-frontend:1.0
         ports:
         - containerPort: 3000
         env:
