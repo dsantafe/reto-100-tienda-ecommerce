@@ -34,6 +34,8 @@ Nota: También puedes ejecutar los contenedores a partir de un Docker Compose:
 $ cd /deploy
 $ docker-compose -p reto-100-tienda-ecommerce up -d
 ```
+Docker:
+![Docker](./assets/docker-application.png)
 
 4. Desarrollar un pipeline de CI/CD en GitHub Actions que realice el build de la imagen y lo publique a Docker Hub.
 - [Administre etiquetas y etiquetas con las acciones de GitHub](https://docs.docker.com/build/ci/github-actions/manage-tags-labels/)
@@ -87,6 +89,8 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
 ```
+CI/CD pipeline:
+![CI/CD pipeline](./assets/cicd.png)
 
 # Despliegue de Aplicación en Kubernetes usando Minikube y Argo CD
 Este repositorio contiene los archivos y comandos necesarios para desplegar una aplicación en un clúster de Kubernetes utilizando Minikube y Argo CD.
@@ -129,6 +133,10 @@ Aplica el archivo de ArgoCD para desplegar la aplicación en Kubernetes. Este ar
 ```shell    
 $ kubectl apply -f application.yaml
 ```
+ArgoCD:
+![CI/CD pipeline](./assets/argo-application.png)
+Minikube:
+![CI/CD pipeline](./assets/minikube-application.png)
 
 5. Obtener la URL del servicio:
 Obtén la URL para acceder a la aplicación a través de Minikube.
@@ -137,6 +145,18 @@ $ kubectl port-forward service/ms-frontend -n reto-100-tienda-ecommerce-ns 3000:
 ```
 
 6. Acceder a la aplicación http://localhost:3000
+
+ms-frontend:
+![CI/CD pipeline](./assets/ms-frontend.png)
+ms-products:
+![CI/CD pipeline](./assets/ms-products.png)
+ms-shopping-cart:
+![CI/CD pipeline](./assets/ms-shopping-cart.png)
+ms-merchandise:
+![CI/CD pipeline](./assets/ms-merchandise.png)
+
+Arquitectura del Cluster:
+![Arquitectura del Cluster](./assets/minikube.jpeg)
 
 # Links
 - Config repo: https://github.com/dsantafe/reto-100-tienda-ecommerce
